@@ -155,20 +155,25 @@
 
 
 
-    <!-- Menu lateral (offcanvas) -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="popup-content-title-area"
-    aria-labelledby="popup-content-title-area-label" style="width: 82vw;">
-    <div class="offcanvas-header">
-        <!-- Botão de voltar -->
-        <!-- Botão de voltar -->
-        <button type="button" class="btn border-0 d-flex align-items-center" data-bs-dismiss="offcanvas"
-            aria-label="Voltar">
-            <i class="bi bi-arrow-left-circle me-2"></i> <!-- Ícone de seta para voltar -->
-            <span>Voltar</span>
-        </button>
-
+<!-- Menu lateral (offcanvas) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="popup-content-title-area"
+aria-labelledby="popup-content-title-area-label" style="width: 82vw; padding: 15px;">
+<div class="offcanvas-header">
+    <!-- Botão de voltar -->
+    <button type="button" class="btn border-0 d-flex align-items-center" data-bs-dismiss="offcanvas"
+        aria-label="Voltar">
+        <i class="bi bi-arrow-left-circle me-2"></i> <!-- Ícone de seta para voltar -->
+        <span>Voltar</span>
+    </button>
+</div>
+<div class="form-customer-item mb-4">
+    <div class="form-customer-item-header text-top" style="padding: 15px;">
+        <h5 class="offcanvas-title" id="popup-content-title-area-label">Cadastro de Cliente</h5>
     </div>
-    <h5 class="offcanvas-title text-center" id="popup-content-title-area-label">Cadastro de Cliente</h5>
+</div>
+
+<hr class="m-0">
+
     <div class="offcanvas-body">
         <form class="form-customer" id="form-customer">
             <!-- Dados pessoais -->
@@ -200,24 +205,25 @@
                             <input type="text" class="input sm form-control" name="email" id="input-email">
                         </div>
                     </div>
-                  <!-- Data de Nascimento e Sexo -->
-                    <div class="form-customer-item-row row col-md-5">
+               
+              <!-- Data de Nascimento e Sexo -->
+                    <div class="form-customer-item-row col-md-5">
                         <div class="row">
                             <div class="input-item col-6">
                                 <label class="required" for="input-birth">Data de Nascimento</label>
                                 <input type="text" class="input sm form-control" name="birth" id="input-birth">
                             </div>
                             <div class="input-item col-6">
-                                <label class="required" for="input-gender">Sexo</label>
-                                <select name="gender" id="input-gender" class="form-control">
-                                    <option value="">Selecione</option>
-                                    <option value="female">Feminino</option>
-                                    <option value="male">Masculino</option>
-                                    <option value="other">Outro</option>
-                                </select>
+                                <label for="generoInput" class="form-label">Gênero</label>
+                                <input class="form-control" list="datalistOptionsGenero" id="generoInput" placeholder="Selecione seu gênero">
+                                <datalist id="datalistOptionsGenero">
+                                    <option value="Masculino">
+                                    <option value="Feminino">
+                                    <option value="Outro">
+                                </datalist>
                             </div>
                         </div>
-                        </div>
+                    </div>
                     <!-- Profissão -->
                     <div class="form-customer-item-row col-md-5">
                         <div class="input-item">
@@ -228,6 +234,8 @@
                 </div>
             </div>
 
+            <hr class="m-0">
+
             <!-- Dados de contato -->
             <div class="form-customer-item mb-4">
                 <div class="form-customer-item-header">
@@ -237,7 +245,7 @@
                 </div>
                 <div class="form-customer-item-inputs-area d-flex flex-column align-items-center">
                     <!-- Telefone e Celular -->
-                    <div class="form-customer-item-row">
+                    <div class="form-customer-item-row  col-5">
                         <div class="input-item">
                             <label for="input-telephone">Telefone</label>
                             <input type="text" name="telephone" class="input sm form-control"
@@ -251,56 +259,67 @@
                 </div>
             </div>
 
+            <hr class="m-0">
+
             <!-- Dados de endereço -->
             <div class="form-customer-item mb-4">
-                <div class="form-customer-item-header">
+                <div class="form-customer-item-header ">
                     <span class="form-customer-item-label text-uppercase fw-bold">Dados de
                         Endereço</span><br><br>
                     <span class="form-customer-item-description">Preencha as informações de endereço.</span>
                 </div>
                 <div class="form-customer-item-inputs-area d-flex flex-column align-items-center">
                     <!-- CEP e Logradouro -->
-                    <div class="form-customer-item-row  row">
-                        <div class="input-item  col-md-6" >
-                            <label class="required" for="input-cep">CEP</label>
-                            <input type="text" name="cep" class="input sm form-control" id="input-cep">
-                        </div>
-                        <div class="input-item  col-md-6">
-                            <label class="required" for="input-address">Logradouro</label>
-                            <input type="text" name="address" class="input sm form-control"
-                                id="input-address">
+                    <div class="form-customer-item-row col-md-5">
+                        <div class="row">
+                            <div class="input-item  col-3" >
+                                <label class="required" for="input-cep">CEP</label>
+                                <input type="text" name="cep" class="input sm form-control" id="input-cep">
+                            </div>
+                            <div class="input-item  col-9">
+                                <label class="required" for="input-address">Logradouro</label>
+                                <input type="text" name="address" class="input sm form-control"
+                                    id="input-address">
+                            </div>
                         </div>
                     </div>
+
+                    <hr class="m-0">
+
+
                     <!-- Número e Complemento -->
-                    <div class="form-customer-item-row row">
-                        <div class="input-item  col-md-6">
+                    <div class="form-customer-item-row col-md-5">
+                        <div class="row">
+                        <div class="input-item  col-6">
                             <label class="required" for="input-number">Número</label>
                             <input type="text" name="number" class="input sm form-control"
                                 id="input-number">
                         </div>
-                        <div class="input-item  col-md-6">
+                        <div class="input-item  col-6">
                             <label for="input-complement">Complemento</label>
                             <input type="text" name="complement" class="input sm form-control"
                                 id="input-complement">
                         </div>
                     </div>
+                </div>
                     <!-- Bairro, Cidade e Estado -->
-                    <div class="form-customer-item-row ">
+                    <div class="form-customer-item-row col-md-5 ">
                         <div class="input-item ">
                             <label class="required" for="input-district">Bairro</label>
                             <input type="text" name="district" class="input sm form-control"
                                 id="input-district">
                         </div>
                     </div>
-                    <div class="form-customer-item-row row">
-                        <div class="input-item col-md-6">
+                    <div class="form-customer-item-row col-md-5">
+                        <div class="row">
+                        <div class="input-item col-10">
                             <label class="required" for="input-city">Cidade</label>
                             <div class="select">
                                 <select name="city" id="input-city" class="form-control"></select>
                                 <i class="ph ph-caret-down"></i>
                             </div>
                         </div>
-                        <div class="input-item col-md-6">
+                        <div class="input-item col-2">
                             <label class="required" for="input-state">Estado</label>
                             <input type="text" name="state" disabled class="input sm form-control"
                                 id="input-state">
@@ -308,12 +327,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <hr class="m-0"><br><br>
 
             <!-- Ações -->
-            <div class="form-customer-actions text-center">
-                <button type="button" class="btn btn-secondary sm"
+            <div class="form-customer-actions text-end">
+                <button type="button" class="btn btn-outline-secondary me-2"
                     id="cancel-popup-new-customer-btn">Cancelar</button>
-                <button type="submit" class="btn btn-primary sm">Salvar</button>
+                <button type="submit" class="btn btn-success">Salvar</button>
             </div>
         </form>
     </div>
